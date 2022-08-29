@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Control</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css'/>
+
+  
+</head>
+<body>
+    <!-- MODAL ADD -->
+    <div class="modal fade" id="addPacienteModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Insira as informações do paciente:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="add_paciente_form">
+                    <div class="modal-body p-4 bg-light">
+                        <div class="row">
+                            <div class="col-lg">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" id="name" name="nome" class="form-control" placeholder="Nome do Paciente" required>
+                            </div>
+                            <div class="col-lg">
+                                <label for="wpp">Nascimento</label>
+                                <input type="date" id="date" name="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" class="form-control" required placeholder="CPF do Paciente">
+                            </div>
+                            <div class="col-lg">
+                                <label for="wpp">WhatsApp</label>
+                                <input type="text" id="wpp" name="wpp" class="form-control" required placeholder="(99) 9 9999-9999">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-secondary">Resetar</button>
+                        <button type="submit" id="add_paciente_btn" class="btn btn-success">Adicionar Paciente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE PATIENTS -->
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-lg-12">
+                <div  class="card shadow">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPacienteModal"><i class="bi-plus-circle me-2"></i>Paciente</button>
+                    </div>
+                    <section id="table-container">
+                        <table class="table table-hover text-center align-middle" id="tablePatient">
+                            <thead>
+                                <tr>
+                                    <th>NOME</th>
+                                    <th>NASCIMENTO</th>
+                                    <th>CPF</th>
+                                    <th>WHATSAPP</th>
+                                    <th>STATUS</th>
+                                    <th>AÇÕES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- LINK JS -->
+    <script type="module" src="assets/js/scripts.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
